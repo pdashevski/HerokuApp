@@ -17,9 +17,9 @@ public class InputDataInInputFieldTest {
     public void inputFieldShouldGetData() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver browser = new ChromeDriver();
-        browser.get("http://the-internet.herokuapp.com/inputs");
         browser.manage().window().maximize();
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        browser.get("http://the-internet.herokuapp.com/inputs");
         WebElement inputField = browser.findElement(By.tagName("input"));
         inputField.sendKeys(Keys.ARROW_UP);
         String inputFieldValue = inputField.getAttribute("value");

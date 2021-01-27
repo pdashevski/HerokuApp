@@ -13,9 +13,9 @@ public class CheckTheTyposInParagraphTest {
     public void paragraphTextShouldBeTheSame() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver browser = new ChromeDriver();
-        browser.get("http://the-internet.herokuapp.com/typos");
         browser.manage().window().maximize();
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        browser.get("http://the-internet.herokuapp.com/typos");
         WebElement typos = browser.findElements(By.tagName("p")).get(1);
         String actualTypos = typos.getText();
         Assert.assertEquals(actualTypos, EXPECTED_TYPOS, "don't");
