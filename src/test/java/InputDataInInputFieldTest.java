@@ -37,7 +37,7 @@ public class InputDataInInputFieldTest {
         inputField.sendKeys(MAX_BIG_NUMBER_STR);
         inputField.sendKeys(Keys.ARROW_DOWN);
         inputFieldValue = inputField.getAttribute("value");
-        Assert.assertEquals(inputFieldValue, "1e+48"); //EXPECTED ERROR IS HERE
+        Assert.assertEquals(inputFieldValue, MAX_BIG_NUMBER_STR); //EXPECTED ERROR HERE (expected "1e+48")
         browser.quit();
     }
 }
